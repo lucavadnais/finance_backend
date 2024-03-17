@@ -12,4 +12,13 @@ router.post('/', async function (req, res, next)  {
   }
 });
 
+router.get('/:userId', async function (req, res, next) {
+  try {
+    res.send(await Users.getById(req.params.userId));
+  } catch (error) {
+    console.log(error);
+    return next(error);
+  }
+});
+
 module.exports = router;
