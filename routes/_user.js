@@ -3,6 +3,7 @@ const { Router } = express;
 const router = Router();
 const Users = require('../controllers/users_controller');
 
+/* Create a new user */
 router.post('/', async function (req, res, next)  {
   try {
     res.send(await Users.createUser(req.body));
@@ -12,6 +13,7 @@ router.post('/', async function (req, res, next)  {
   }
 });
 
+/* Get user by id */
 router.get('/:userId', async function (req, res, next) {
   try {
     res.send(await Users.getById(req.params.userId));
