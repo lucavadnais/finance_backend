@@ -18,7 +18,6 @@ class Users {
         return Users.dbUser.findById(userId).select("-__v -password");
     }
 
-
     static async login(email, password) {
         const user = await Users.dbUser.findOne({email: email});
         if (!user) {

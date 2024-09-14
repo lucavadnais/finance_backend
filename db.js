@@ -6,6 +6,7 @@ const options = {
 };
 
 const users = require('./models/users_model');
+const accounts = require('./models/accounts_model');
 
 mongoose.connect(process.env.MONGO_URI, options).then(r => {
     console.log('Connected to MongoDB');
@@ -16,4 +17,5 @@ mongoose.connect(process.env.MONGO_URI, options).then(r => {
 
 module.exports = {
     users,
+    accounts
 }

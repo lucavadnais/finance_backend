@@ -1,6 +1,7 @@
 const express = require('express');
 const userRoutes = require('./routes/_user');
 const loginRoutes = require('./routes/_auth');
+const accountRoutes = require('./routes/_account');
 const cors = require('cors');
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(cors(corsOptions));
 // Routes
 app.use('/users', userRoutes);
 app.use('/login', loginRoutes);
+app.use('/account', accountRoutes);
 
 // Start server
 app.listen(PORT, () => {
